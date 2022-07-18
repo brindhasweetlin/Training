@@ -59,16 +59,16 @@
     </table><!--Print Sum of all elements in Array-->
       <script>
 
-         var arr1 = [1,11,111,12,123]; //Declare a Integer Array
+         var array= [1,11,111,12,123]; //Declare a Integer Array
          //Sum of all elements in the array
          sum=0;
-         for (i = 0; i < arr1.length; i++)
+         for (i = 0; i < array.length; i++)
           {  
-           sum=sum+arr1[i];    
+           sum=sum+array[i];    
                }  
+               document.getElementById("sum").innerHTML="The array is "+array+"<br><br>Sum of the array is " +sum;
           
-               document.getElementById("sum").innerHTML="Sum of the array is " +sum;
-          //Linked List
+               //Linked List
           class ListNode {
     constructor(data) {
         this.data = data
@@ -90,76 +90,79 @@ node3.next = node4
 let node5 = new ListNode(25)
 node4.next = node5
 
-let list = new LinkedList(node1)
+let list = new LinkedList(node1);
+print(list);
 
-//function to print the data in the linked list and to find the size
-count=0;
+//function to find the size of the linked list
 function size(list)
 {  
+    count=0;
     let node = list.head;
-    let liststr="Linked List is ";
-    while (node) {
-        
+    while (node) 
+      { 
         count++;
-        liststr=liststr+node.data+",";
         node = node.next;
     }
-    document.getElementById("list").innerHTML=liststr;
     return count;
 } 
+
+//function to print the data in the linked list
+function print(list)
+{  
+    let node = list.head;
+    let linkList="Linked List is ";
+    while (node) {
+        linkList=linkList+node.data+",";
+        node = node.next;
+    }
+    document.getElementById("list").innerHTML=linkList;
+}
 //function to get the last value in the linked list
-function getLast(list) 
+function getLast(list,i) 
 {
-    let lastcount=0;
     let lastNode = list.head;
     if (lastNode) {
-        while (lastcount<(count-1)) {
+        for(j=0;j<(i-1);j++) {
             lastNode = lastNode.next;
-            lastcount++;
         }
     }
     return lastNode.data;
  }
 
  //Reverse the list with Stack
-stk1=[];
-listcount=count=size(list);
-val=0;
-while(count>0)
+stack=[];
+count=size(list);
+for(i=count;i>0;i--)
 {
-val=getLast(list);
-stk1.push(val);
-count--;
+listVal=getLast(list,i);
+stack.push(listVal);
 }
-document.getElementById("stack").innerHTML="Stack created by reversing the List : "+stk1;
+document.getElementById("stack").innerHTML="Stack created by reversing the Linked List : "+stack;
 
 //Pass the even index elements into Queue
 queue=[];
-front=0;
 rear=0;
-i=0;
-while(i<listcount)
+for(i=0;i<count;i=i+2)
 {
-    queue[rear]=stk1[i];
+    queue[rear]=stack[i];
     rear++;
-    i=i+2;
 }
 document.getElementById("queue").innerHTML="Queue created by the even indexed elements : "+queue;
 
-//Create a Map and Pass the odd index elements in Map
-newarr=[];
-newarr=stk1.map(addarray);
-document.getElementById("maps").innerHTML=" Maps created using odd indexed elements : "+newarr;
-function addarray(item,index) {
-    if(index%2==1)
-   return item;
+//Create a Map for the stack elements
+let text ="<table border='1px solid'><tr><th align='center'>Key</th><th align='center'> Value</th></tr>";
+const keys = stack.keys();
+for (let x of keys) {
+  text += "<tr><td>"+x + "</td><td>"+stack[x]+"</td></tr>";
 }
+text+="</table>"
+document.getElementById("maps").innerHTML=" Maps created for the stack value: <br><br>"+text;
 
 
 //Check the String expression is valid or not using Stack
 str1="((x+y)*z)";
 str2=[];
-valex="";
+valExpr="";
 len=str1.length;
 for(i=0;i<len;i++)
 {
@@ -173,12 +176,12 @@ else if(str1[i]==")"&& str2.length>0)
 }
 else if(str1[i]==")"&& str2.length==0)
 {
-    valex="no"
+    valExpr="no"
     document.getElementById("expr").innerHTML=str1+" is not a valid expression";
     exit;
 }
 }
-if (str2.length==0 && valex!="no")
+if (str2.length==0 && valExpr!="no")
 {
     document.getElementById("expr").innerHTML=str1+" is a valid expression";
 }
