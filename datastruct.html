@@ -56,9 +56,9 @@
         <tr><td class="queue" id="queue" align="center"></td></tr>
         <tr><td class="maps" id="maps" align="center"></td></tr>
         <tr><td class="expr" id="expr" align="center"></td></tr>
-    </table><!--Print Sum of all elements in Array-->
+    </table>
       <script>
-
+//Print Sum of all elements in Array
          var array= [1,11,111,12,123]; //Declare a Integer Array
          //Sum of all elements in the array
          sum=0;
@@ -93,6 +93,18 @@ node4.next = node5
 let list = new LinkedList(node1);
 print(list);
 
+//function to print the data in the linked list
+function print(list)
+{  
+    let node = list.head;
+    let linkList="Linked List is ";
+    while (node) {
+        linkList=linkList+node.data+",";
+        node = node.next;
+    }
+    document.getElementById("list").innerHTML=linkList;
+}
+
 //function to find the size of the linked list
 function size(list)
 {  
@@ -106,17 +118,7 @@ function size(list)
     return count;
 } 
 
-//function to print the data in the linked list
-function print(list)
-{  
-    let node = list.head;
-    let linkList="Linked List is ";
-    while (node) {
-        linkList=linkList+node.data+",";
-        node = node.next;
-    }
-    document.getElementById("list").innerHTML=linkList;
-}
+
 //function to get the last value in the linked list
 function getLast(list,i) 
 {
@@ -156,38 +158,38 @@ for (let x of keys) {
   text += "<tr><td>"+x + "</td><td>"+stack[x]+"</td></tr>";
 }
 text+="</table>"
-document.getElementById("maps").innerHTML=" Maps created for the stack value: <br><br>"+text;
+document.getElementById("maps").innerHTML=" Maps created for the stack value using keys: <br><br>"+text;
 
 
 //Check the String expression is valid or not using Stack
-str1="((x+y)*z)";
-str2=[];
+string1="((x+y)*z)";
+string2=[];
 valExpr="";
-len=str1.length;
+len=string1.length;
 for(i=0;i<len;i++)
 {
-if(str1[i]=="(")
+if(string1[i]=="(")
 {
-    str2.push(str1[i]);
+    string2.push(string1[i]);
 }
-else if(str1[i]==")"&& str2.length>0)
+else if(string1[i]==")"&& string2.length>0)
 {
-    str2.pop();
+    string2.pop();
 }
-else if(str1[i]==")"&& str2.length==0)
+else if(string1[i]==")"&& string2.length==0)
 {
     valExpr="no"
-    document.getElementById("expr").innerHTML=str1+" is not a valid expression";
+    document.getElementById("expr").innerHTML=string1+" is not a valid expression";
     exit;
 }
 }
-if (str2.length==0 && valExpr!="no")
+if (string2.length==0 && valExpr!="no")
 {
-    document.getElementById("expr").innerHTML=str1+" is a valid expression";
+    document.getElementById("expr").innerHTML=string1+" is a valid expression";
 }
-else if(str2.length>0)
+else if(string2.length>0)
 {
-    document.getElementById("expr").innerHTML=str1+" is not a valid expression";
+    document.getElementById("expr").innerHTML=string1+" is not a valid expression";
 }
       </script>
    </body>
