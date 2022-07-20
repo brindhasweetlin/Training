@@ -1,22 +1,30 @@
 var studentName = "Alan";
 var studentRolNo = "001";
 var studentClass = "2 'E'";
-var subjectMark = [90, 100, 95];
+var subjectMark = [90, 90, 100, 95, 100];
 var isStudentPass = true;
 var studentParent = { fatherName: "Eben", motherName: "Johnsi" };
-var studentContact = { streetName: "11,Stabli Street", place: "Medavakkam", city: "Chennai", pincode: 560037, phoneNumber: 9876543210 };
-//Class
+var studentContact = {
+    streetName: "11,Stabli Street",
+    place: "Medavakkam",
+    city: "Chennai",
+    pincode: 560037,
+    phoneNumber: 9876543210
+};
 function clickEvent() {
     document.write("<h3>Student Details</h3>");
     document.write("Student Name <br><input type='text' value='" + studentName + "'><br><br>");
     document.write("Student Roll Number<br><input type='text' value='" + studentRolNo + "'><br><br>");
     document.write("Student Class<br><input type='text' value='" + studentClass + "'><br><br>");
-    document.write("Student Subject Mark <br><input type='text' value=");
     var mark = "";
-    for (var i = 0; i < subjectMark.length; i++) {
-        mark = mark + subjectMark[i] + ", ";
+    var subjectNumber = subjectMark.length;
+    for (var i = 0; i < subjectNumber; i++) {
+        if (i != subjectNumber - 1)
+            mark = mark + String(subjectMark[i]) + ", ";
+        else
+            mark = mark + String(subjectMark[i]);
     }
-    document.write(mark + "><br><br>");
+    document.write("Student Subject Mark <br><input type='text' value='" + mark + "'><br><br>");
     var passVal = "";
     if (isStudentPass)
         passVal = "Yes";
