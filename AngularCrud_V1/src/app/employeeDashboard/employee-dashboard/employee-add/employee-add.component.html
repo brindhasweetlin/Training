@@ -1,0 +1,48 @@
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee Detail</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+        <div class="container-fluid">
+        <table class="table mt-3" >
+            <tbody><tr><td>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" class="form-control" formControlName="firstName" id="firstName">
+                </div>
+                <div class="mb-3">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" formControlName="lastName" id="lastName">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email ID</label>
+                    <input type="email" class="form-control" id="email" formControlName="email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="mobile" class="form-label">Mobile Number</label>
+                    <input type="text" class="form-control" id="mobile" formControlName="mobile">
+                  </div>
+                  <div class="mb-3">
+                    <label for="salary" class="form-label">Salary</label>
+                    <input type="text" class="form-control" id="salary" formControlName="salary">
+                  </div>
+              </form>
+        </div>
+        </td></tr><tr>
+            <td align="center">
+              <div class="mb-3">
+                <button type="button"  class="btn btn-primary" (click)="postEmployeeDetails()" >Add</button>
+              </div>
+            </td></tr></tbody></table>
+          </div>
+    <!--<div class="modal-footer" align="center">
+          <button type="button"  class="btn btn-primary" (click)="postEmployeeDetails()" >Add</button>
+        </div>
+       </div>
+    </div>
+  </div> -->

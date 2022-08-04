@@ -1,0 +1,29 @@
+<div class="container-fluid" >
+ <table class="table mt-3">
+    <thead>
+        <tr>
+        <th scope="col" (click)="sort('id')">Employee ID</th>
+        <th scope="col" (click)="sort('firstName')">First Name</th>
+        <th scope="col" (click)="sort('lastName')">Last Name</th>
+        <th scope="col">Email ID</th>
+        <th scope="col">Mobile No</th>
+        <th scope="col" (click)="sort('salary')">Salary</th>
+        <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of employeeData | orderBy : key : reverse; trackBy: trackByData" >
+            <td>{{row.id}}</td>
+            <td>{{row.firstName}}</td>
+            <td>{{row.lastName}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.mobile}}</td>
+            <td>{{row.salary}}</td>
+            <td><button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" [routerLink]="['/employeeUpdate',row.id]" routerLinkActive="active" >Edit</button>
+                <button class="btn btn-danger mx-3" (click)="deleteEmployee(row)">Delete</button>
+            </td>
+        </tr>
+        <tr><td colspan="7"> <input type="text" class="form-control" placeholder="Enter the firstName to search.." [(ngModel)]="srchName" (ngModelChange)="searchEmployee()"></td></tr>
+    </tbody>
+</table>
+</div>
