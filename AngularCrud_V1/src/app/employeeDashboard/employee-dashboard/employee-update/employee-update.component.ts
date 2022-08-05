@@ -12,7 +12,7 @@ import { HttpClient} from '@angular/common/http'
 export class EmployeeUpdateComponent implements OnInit {
 formValue!:FormGroup;
 id!:any;
-show!:Boolean;
+//show!:Boolean;
  employeeModelUpdateObj = new EmployeeModel();
  employeeData !:any[];
   constructor(private formBuilder:FormBuilder,

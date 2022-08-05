@@ -33,17 +33,17 @@ deleteEmployee(row:any)
     this.getEmployeeDetails()
   })
 }
-onEdit(row:any)
-{
-  alert("Iam called");
-  this.employeeModelObj.id=row.id;
-  this.employeeModelObj.firstName=row.firstName;
-  this.employeeModelObj.lastName=row.lastName;
-  this.employeeModelObj.email=row.email;
-  this.employeeModelObj.mobile=row.mobile;
-  this.employeeModelObj.salary=row.salary;
+// onEdit(row:any)
+// {
+//   alert("Iam called");
+//   this.employeeModelObj.id=row.id;
+//   this.employeeModelObj.firstName=row.firstName;
+//   this.employeeModelObj.lastName=row.lastName;
+//   this.employeeModelObj.email=row.email;
+//   this.employeeModelObj.mobile=row.mobile;
+//   this.employeeModelObj.salary=row.salary;
 
-}
+// }
 
 
 searchEmployee()

@@ -11,8 +11,8 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class EmployeeAddComponent implements OnInit {
   employeeModelObj = new EmployeeModel();
   formValue !:FormGroup;
-  showAdd !:boolean;
-  showUpdate!:boolean;
+  // showAdd !:boolean;
+  // showUpdate!:boolean;
   employeeData !:any[];
 
   constructor(private formBuilder : FormBuilder,
@@ -39,12 +39,12 @@ export class EmployeeAddComponent implements OnInit {
       this.employeeData=res;
     })
   }
-  clickAdd()
-{
-  this.formValue.reset();
-  this.showAdd=true;
-  this.showUpdate=false;
-}
+//   clickAdd()
+// {
+//   this.formValue.reset();
+//   this.showAdd=true;
+//   this.showUpdate=false;
+// }
 postEmployeeDetails()
 {
   this.employeeModelObj.firstName=this.formValue.value.firstName;

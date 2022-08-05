@@ -129,18 +129,10 @@
       "salary": "10500"
     },
     {
-      "id": 22,
-      "firstName": "Arul",
-      "lastName": "Immanuel",
-      "email": "arul@gmil.com",
-      "mobile": "9663463740",
-      "salary": "60500"
-    },
-    {
       "id": 23,
-      "firstName": "Beryl",
+      "firstName": "Shantha",
       "lastName": "Priya",
-      "email": "beryl@gmail.com",
+      "email": "shantha@gmail.com",
       "mobile": "838947380",
       "salary": "50000"
     },
@@ -151,6 +143,14 @@
       "email": "simon@gmail.com",
       "mobile": "098483894",
       "salary": "30000"
+    },
+    {
+      "id": 26,
+      "firstName": "Jonath",
+      "lastName": "Raja",
+      "email": "Jonath@gmail.com",
+      "mobile": "9837858935",
+      "salary": "48932747"
     }
   ],
   "comments": [],
